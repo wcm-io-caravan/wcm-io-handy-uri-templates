@@ -4,7 +4,7 @@
 
 
 > [!NOTE]
-> This is a fork of https://github.com/damnhandy/Handy-URI-Templates, now maintained by the wcm.io Caravan Team.<br/> 
+> This is a fork of https://github.com/damnhandy/Handy-URI-Templates, now maintained by the wcm.io Caravan Team.
 > It fixes compatibility issues with JDK 21+ environments and otherwise can be used as drop-in replacement.
 
 
