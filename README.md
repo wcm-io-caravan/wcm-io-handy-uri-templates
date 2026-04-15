@@ -1,10 +1,12 @@
-# Handy URI Templates
+# wcm.io Caravan Handy URI Templates
+[![Build](https://github.com/wcm-io-caravan/Handy-URI-Templates/actions/workflows/maven-build.yml/badge.svg?branch=develop)](https://github.com/wcm-io-caravan/Handy-URI-Templates/actions?query=workflow%3ABuild+branch%3Adevelop)
+[![Maven Central](https://img.shields.io/maven-central/v/io.wcm.caravan/wcm-io-handy-uri-templates)](https://repo1.maven.org/maven2/io/wcm/caravan/wcm-io-handy-uri-templates/)
 
-[![Join the chat at https://gitter.im/damnhandy/Handy-URI-Templates](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/damnhandy/Handy-URI-Templates?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
-[![Build Status](https://secure.travis-ci.org/damnhandy/Handy-URI-Templates.png?branch=master)](http://travis-ci.org/damnhandy/Handy-URI-Templates)
+> [!NOTE]
+> This is a fork of https://github.com/damnhandy/Handy-URI-Templates, now maintained by the wcm.io Caravan Team.<br/> 
+> It fixes compatibility issues with JDK 21+ environments and otherwise can be used as drop-in replacement.
 
-[![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.damnhandy/handy-uri-templates/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.damnhandy/handy-uri-templates)
 
 Handy URI Templates is a uritemplate processor implementing [RFC6570](http://tools.ietf.org/html/rfc6570) written in Java. If you are looking for a non-Java implementation, please check the [RFC6570 implementations page](http://code.google.com/p/uri-templates/wiki/Implementations). The current implementation is based on the final release of the uri template spec. The template processor supports the following features:
 
@@ -20,13 +22,9 @@ Handy URI Templates is a uritemplate processor implementing [RFC6570](http://too
 
 As of version `1.1.1`, Handy URI Templates passes all tests defined by the [uritemplate-test](https://github.com/uri-templates/uritemplate-test) suite.
 
-You can view [code coverage here](https://damnhandy.github.io/Handy-URI-Templates/cobertura/).
-
-The complete [JavaDocs are here](http://damnhandy.github.io/Handy-URI-Templates/apidocs/).
-
 ## API Documentation
 
-JavaDocs are available on [Javadocs.io](http://www.javadoc.io/doc/com.damnhandy/handy-uri-templates)
+JavaDocs are available on [Javadocs.io](http://www.javadoc.io/doc/io.wcm.caravan/wcm-io-handy-uri-templates)
 
 ## Maven
 
@@ -34,35 +32,11 @@ To use the latest version of Handy URI Templates, you need to add the following 
 
 ```xml
 <dependency>
-  <groupId>com.damnhandy</groupId>
-  <artifactId>handy-uri-templates</artifactId>
-  <version>2.1.7</version>
+  <groupId>io.wcm.caravan</groupId>
+  <artifactId>wcm-io-handy-uri-templates</artifactId>
+  <version><!-- latest version --></version>
 </dependency>
 ```
-
-The next version of Handy URI Templates includes some big changes to the API. If you want to be daring, you can use the `SNAPSHOT` release:
-
-```xml
-<dependency>
-  <groupId>com.damnhandy</groupId>
-  <artifactId>handy-uri-templates</artifactId>
-  <version>2.1.8-SNAPSHOT</version>
-</dependency>
-```
-
-
-
-In order to use a SNAPSHOT release, you'll have to add the Sonatype snapshots repository:
-
-```xml
-<repository>
-  <id>sonatype-nexus-snapshots</id>
-  <name>sonatype-nexus-snapshots</name>
-  <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-</repository>
-```
-
-You can also download the artifact directly at [http://search.maven.org](http://search.maven.org/#search%7Cga%7C1%7Chandy-uri-templates)
 
 
 ## Basic Usage
