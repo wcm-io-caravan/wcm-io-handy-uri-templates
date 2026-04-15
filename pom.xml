@@ -74,8 +74,20 @@
             <plugin>
                 <groupId>org.apache.felix</groupId>
                 <artifactId>maven-bundle-plugin</artifactId>
-                <version>4.2.0</version>
+                <version>5.1.9</version>
                 <extensions>true</extensions>
+                <executions>
+                    <!-- Configure extra execution of 'manifest' in process-classes phase to make sure SCR metadata is generated before unit test runs -->
+                    <execution>
+                    <id>scr-metadata</id>
+                    <goals>
+                        <goal>manifest</goal>
+                    </goals>
+                    <configuration>
+                        <supportIncrementalBuild>true</supportIncrementalBuild>
+                    </configuration>
+                    </execution>
+                </executions>
                 <configuration>
                     <instructions>
                         <Bundle-SymbolicName>${project.groupId}.${project.artifactId}</Bundle-SymbolicName>
