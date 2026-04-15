@@ -6,7 +6,6 @@ on:
   push:
     branches:
       - develop
-      - feature/wcmio-fork
   pull_request:
   workflow_dispatch:
 
