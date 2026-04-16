@@ -4,7 +4,7 @@
 
 
 > [!NOTE]
-> This project is a fork of [Handy URI Templates](https://github.com/damnhandy/Handy-URI-Templates) originally developed by Ryan McGeary.
+> This project is a fork of [Handy URI Templates](https://github.com/damnhandy/Handy-URI-Templates) originally developed by Ryan J. McDonough.
 > We are grateful for the original implementation, which served as the foundation for this work.
 >
 > This fork fixes compatibility issues with JDK 21+ environments and otherwise can be used as drop-in replacement.
