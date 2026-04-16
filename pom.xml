@@ -36,6 +36,16 @@
         <tag>HEAD</tag>
     </scm>
 
+    <issueManagement>
+        <system>Github Issues</system>
+        <url>https://github.com/wcm-io-caravan/Handy-URI-Templates/issues</url>
+    </issueManagement>
+
+    <ciManagement>
+        <system>GitHub Actions</system>
+        <url>https://github.com/wcm-io-caravan/Handy-URI-Templates/actions</url>
+    </ciManagement>
+
     <licenses>
         <license>
             <name>The Apache Software License, Version 2.0</name>
@@ -50,11 +60,6 @@
         <name>wcm.io Caravan</name>
         <url>https://caravan.wcm.io</url>
     </organization>
-
-    <issueManagement>
-        <system>Github Issues</system>
-        <url>https://github.com/wcm-io-caravan/Handy-URI-Templates/issues</url>
-    </issueManagement>
 
     <developers>
         <developer>
@@ -225,5 +230,48 @@
         </dependency>
 
     </dependencies>
+
+    <profiles>
+        <!-- profile used for building releases and deployment to sonatype/maven central -->
+        <profile>
+        <id>release-profile</id>
+        <activation>
+            <property>
+            <name>performRelease</name>
+            <value>true</value>
+            </property>
+        </activation>
+        <build>
+            <plugins>
+                <!-- sign the build -->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-gpg-plugin</artifactId>
+                    <inherited>true</inherited>
+                    <executions>
+                    <execution>
+                        <id>sign-artifacts</id>
+                        <goals>
+                        <goal>sign</goal>
+                        </goals>
+                        <phase>verify</phase>
+                    </execution>
+                    </executions>
+                </plugin>
+                <!-- configure staging process at sonatype.-->
+                <plugin>
+                    <groupId>org.sonatype.central</groupId>
+                    <artifactId>central-publishing-maven-plugin</artifactId>
+                    <extensions>true</extensions>
+                    <inherited>true</inherited>
+                    <configuration>
+                    <publishingServerId>sonatype-central</publishingServerId>
+                    <deploymentName>${project.artifactId} ${project.version}</deploymentName>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </build>
+        </profile>
+    </profiles>
 
 </project>
