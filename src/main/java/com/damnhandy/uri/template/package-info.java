@@ -8,4 +8,5 @@
  * @since 1.0.0
  * @author <a href="mailto:ryan@damnhandy.com">Ryan J. McDonough</a>
  */
+@org.osgi.annotation.versioning.Version("2.1.8")
 package com.damnhandy.uri.template;
