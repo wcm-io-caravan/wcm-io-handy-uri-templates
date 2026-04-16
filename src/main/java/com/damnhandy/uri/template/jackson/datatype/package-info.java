@@ -29,6 +29,5 @@
  * @author <a href="ryan@damnhandy.com">Ryan J. McDonough</a>
  * @version $Revision: 1.1 $
  */
+@org.osgi.annotation.versioning.Version("2.1.8")
 package com.damnhandy.uri.template.jackson.datatype;
-
-
