@@ -4,8 +4,10 @@
 
 
 > [!NOTE]
-> This is a fork of https://github.com/damnhandy/Handy-URI-Templates, now maintained by the wcm.io Caravan Team.
-> It fixes compatibility issues with JDK 21+ environments and otherwise can be used as drop-in replacement.
+> This project is a fork of [Handy URI Templates](https://github.com/damnhandy/Handy-URI-Templates) originally developed by Ryan McGeary.
+> We are grateful for the original implementation, which served as the foundation for this work.
+>
+> This fork fixes compatibility issues with JDK 21+ environments and otherwise can be used as drop-in replacement.
 
 
 Handy URI Templates is a uritemplate processor implementing [RFC6570](http://tools.ietf.org/html/rfc6570) written in Java. If you are looking for a non-Java implementation, please check the [RFC6570 implementations page](http://code.google.com/p/uri-templates/wiki/Implementations). The current implementation is based on the final release of the uri template spec. The template processor supports the following features:
