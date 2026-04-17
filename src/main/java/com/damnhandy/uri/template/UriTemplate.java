@@ -694,7 +694,7 @@ public class UriTemplate implements Serializable
                     {
                         expanded = expandMap(operator, varSpec, exploder.getNameValuePairs());
                     }
-                    else if (varSpec.getModifier() != Modifier.EXPLODE)
+                    else
                     {
                         expanded = expandCollection(operator, varSpec, exploder.getValues());
                     }
