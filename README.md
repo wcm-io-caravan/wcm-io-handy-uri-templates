@@ -10,23 +10,23 @@
 > This fork fixes compatibility issues with JDK 21+ environments and otherwise can be used as drop-in replacement.
 
 
-Handy URI Templates is a uritemplate processor implementing [RFC6570](http://tools.ietf.org/html/rfc6570) written in Java. If you are looking for a non-Java implementation, please check the [RFC6570 implementations page](http://code.google.com/p/uri-templates/wiki/Implementations). The current implementation is based on the final release of the uri template spec. The template processor supports the following features:
+Handy URI Templates is a uritemplate processor implementing [RFC6570](https://datatracker.ietf.org/doc/html/rfc6570) written in Java. If you are looking for a non-Java implementation, please check the [RFC6570 implementations page](https://code.google.com/archive/p/uri-templates/wikis/Implementations.wiki). The current implementation is based on the final release of the uri template spec. The template processor supports the following features:
 
 * Fluent Java API for manipulating uritemplates
-* Supports up to [level 4 template expressions](http://tools.ietf.org/html/rfc6570#section-1.2) including prefix and explode modifiers
+* Supports up to [level 4 template expressions](https://datatracker.ietf.org/doc/html/rfc6570#section-1.2) including prefix and explode modifiers
 * Strong validation and error reporting
 * Java objects as template values
 * Support for rendering date values
 * Template expression validation
 * Custom object expanders
-* Support for [Jackson](http://jackson.codehaus.org/) serializers and deserializers.
+* Support for [Jackson](https://github.com/fasterxml/jackson) serializers and deserializers.
 * Support for partial template expansion
 
 As of version `1.1.1`, Handy URI Templates passes all tests defined by the [uritemplate-test](https://github.com/uri-templates/uritemplate-test) suite.
 
 ## API Documentation
 
-JavaDocs are available on [Javadocs.io](http://www.javadoc.io/doc/io.wcm.caravan/wcm-io-handy-uri-templates)
+JavaDocs are available on [Javadocs.io](https://www.javadoc.io/doc/io.wcm.caravan/wcm-io-handy-uri-templates)
 
 ## Maven
 
@@ -58,7 +58,7 @@ This will result in the following URI:
 
 	"/h/houses/A%20test?query=Ask%20something&test2=someting%20else"
 
-You can find more in the [JavaDocs](http://www.javadoc.io/doc/com.damnhandy/handy-uri-templates).
+You can find more in the [JavaDocs](https://www.javadoc.io/doc/io.wcm.caravan/wcm-io-handy-uri-templates).
 
 ## URI Template Builder API
 
@@ -81,7 +81,7 @@ This API is still a work in progress an feedback is appreciated.
 
 ## Using with HTTP Clients
 
-The API can be used with existing HTTP frameworks like the most excellent [Async Http Client](https://github.com/sonatype/async-http-client). Using the [GitHub API](http://developer.github.com/v3/repos/commits/), we can use the a `UriTemplate` to create a URI to look at this repository:
+The API can be used with existing HTTP frameworks like the most excellent [Async Http Client](https://github.com/sonatype/async-http-client). Using the [GitHub API](https://developer.github.com/v3/repos/commits/), we can use the a `UriTemplate` to create a URI to look at this repository:
 
 ```java
 RequestBuilder builder = new RequestBuilder("GET");
@@ -99,11 +99,11 @@ When `Request.getUrl()` is called, it will return:
 
 Please have a look at the example [test case](https://github.com/wcm-io-caravan/wcm-io-handy-uri-templates/blob/develop/src/test/java/com/damnhandy/uri/template/examples/TestGitHubApis.java) for more details.
 
-Usage with the [Apache HTTP Client](http://hc.apache.org/httpcomponents-client-ga/index.html) is just as similar.
+Usage with the [Apache HTTP Client](https://hc.apache.org/httpcomponents-client-ga/index.html) is just as similar.
 
 ## Supported Value Types
 
-While the `set()` method of the [UriTemplate](http://www.javadoc.io/doc/io.wcm.caravan/wcm-io-handy-uri-templates/latest/com/damnhandy/uri/template/UriTemplate.html) accepts any Java object, the following Java types are preferred:
+While the `set()` method of the [UriTemplate](https://www.javadoc.io/doc/io.wcm.caravan/wcm-io-handy-uri-templates/latest/com/damnhandy/uri/template/UriTemplate.html) accepts any Java object, the following Java types are preferred:
 
 * Primitive and Object types such as:
 	* int & Integer
@@ -138,13 +138,13 @@ If you need such data structures in a URI, consider implementing your own `VarEx
 
 ## Composite Values
 
-The URI Template spec supports [composite values](http://tools.ietf.org/html/rfc6570#section-2.4.2) where the variable may be a list of values of an associative array of (name, value) pairs. The template processor always treats lists as java.util.List and name/value pairs as a java.util.Map. Lists and Maps work with any supported type that is not another List, Map, or array.
+The URI Template spec supports [composite values](https://datatracker.ietf.org/doc/html/rfc6570#section-2.4.2) where the variable may be a list of values of an associative array of (name, value) pairs. The template processor always treats lists as java.util.List and name/value pairs as a java.util.Map. Lists and Maps work with any supported type that is not another List, Map, or array.
 
 ## POJOs as Composite Values
 
-The template processor can treat simple Java objects as composite value. When a POJO is set on a template variable and the variable specifies the an explode modifier "*", a [VarExploder](http://www.javadoc.io/doc/io.wcm.caravan/wcm-io-handy-uri-templates/latest/com/damnhandy/uri/template/VarExploder.html) is invoked. The purpose of the `VarExploder` is to expose the object properties as name/value pairs.
+The template processor can treat simple Java objects as composite value. When a POJO is set on a template variable and the variable specifies the an explode modifier "*", a [VarExploder](https://www.javadoc.io/doc/io.wcm.caravan/wcm-io-handy-uri-templates/latest/com/damnhandy/uri/template/VarExploder.html) is invoked. The purpose of the `VarExploder` is to expose the object properties as name/value pairs.
 
-For most use cases, the [DefaultVarExploder](http://www.javadoc.io/doc/io.wcm.caravan/wcm-io-handy-uri-templates/latest/com/damnhandy/uri/template/DefaultVarExploder.html) should be sufficient. The `DefaultVarExploder` is a VarExploder implementation that takes in a Java object and extracts the properties for use in a URI Template. This class is called by default when a POJO is passed into the UriTemplate and the explode modifier is present on the variable. Given the following URI template expression:
+For most use cases, the [DefaultVarExploder](https://www.javadoc.io/doc/io.wcm.caravan/wcm-io-handy-uri-templates/latest/com/damnhandy/uri/template/DefaultVarExploder.html) should be sufficient. The `DefaultVarExploder` is a VarExploder implementation that takes in a Java object and extracts the properties for use in a URI Template. This class is called by default when a POJO is passed into the UriTemplate and the explode modifier is present on the variable. Given the following URI template expression:
 
 	/mapper{?address*}
 
@@ -163,7 +163,7 @@ The expanded URI will be:
 
 	/mapper?city=Newport%20Beach&state=CA
 
-The [DefaultVarExploder](http://www.javadoc.io/doc/io.wcm.caravan/wcm-io-handy-uri-templates/latest/com/damnhandy/uri/template/DefaultVarExploder.html) breaks down the object properties as follows:
+The [DefaultVarExploder](https://www.javadoc.io/doc/io.wcm.caravan/wcm-io-handy-uri-templates/latest/com/damnhandy/uri/template/DefaultVarExploder.html) breaks down the object properties as follows:
 
 * All properties that contain a non-null return value will be included
 * Getters or fields annotated with `@UriTransient` will be excluded
@@ -173,7 +173,7 @@ The [DefaultVarExploder](http://www.javadoc.io/doc/io.wcm.caravan/wcm-io-handy-u
 
 Please refer to the JavaDoc for more details on how the `DefaultVarExploder` works.
 
-Should the [DefaultVarExploder](http://www.javadoc.io/doc/io.wcm.caravan/wcm-io-handy-uri-templates/latest/com/damnhandy/uri/template/DefaultVarExploder.html) not be suitable for your needs, custom [VarExploder](http://www.javadoc.io/doc/io.wcm.caravan/wcm-io-handy-uri-templates/latest/com/damnhandy/uri/template/VarExploder.html) implementations can be added by rolling your own implementation. A custom VarExploder implementation can be used by wrapping your object in your implementation:
+Should the [DefaultVarExploder](https://www.javadoc.io/doc/io.wcm.caravan/wcm-io-handy-uri-templates/latest/com/damnhandy/uri/template/DefaultVarExploder.html) not be suitable for your needs, custom [VarExploder](https://www.javadoc.io/doc/io.wcm.caravan/wcm-io-handy-uri-templates/latest/com/damnhandy/uri/template/VarExploder.html) implementations can be added by rolling your own implementation. A custom VarExploder implementation can be used by wrapping your object in your implementation:
 
 ```java
 UriTemplate.fromTemplate("/mapper{?address*}")
@@ -181,7 +181,7 @@ UriTemplate.fromTemplate("/mapper{?address*}")
            .expand();
 ```
 
-Note: All [VarExploder](http://www.javadoc.io/doc/io.wcm.caravan/wcm-io-handy-uri-templates/latest/com/damnhandy/uri/template/VarExploder.html) implementations are ONLY invoked when the explode modifier "*" is declared in the URI Template expression. If the variable declaration does not specify the explode modifier, an exception is raised.
+Note: All [VarExploder](https://www.javadoc.io/doc/io.wcm.caravan/wcm-io-handy-uri-templates/latest/com/damnhandy/uri/template/VarExploder.html) implementations are ONLY invoked when the explode modifier "*" is declared in the URI Template expression. If the variable declaration does not specify the explode modifier, an exception is raised.
 
 License
 -------
@@ -192,7 +192,7 @@ License
    you may not use this file except in compliance with the License.
    You may obtain a copy of the License at
 
-       http://www.apache.org/licenses/LICENSE-2.0
+       https://www.apache.org/licenses/LICENSE-2.0
 
    Unless required by applicable law or agreed to in writing, software
    distributed under the License is distributed on an "AS IS" BASIS,
