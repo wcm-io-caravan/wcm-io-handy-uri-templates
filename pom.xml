@@ -106,8 +106,6 @@
                 </executions>
             </plugin>
 
-            <!-- TODO: enabled baseline plugin after first release -->
-            <!--
             <plugin>
                 <groupId>biz.aQute.bnd</groupId>
                 <artifactId>bnd-baseline-maven-plugin</artifactId>
@@ -125,7 +123,6 @@
                     </execution>
                 </executions>
             </plugin>
-            -->
 
             <!-- include manifest with OSGi headers -->
             <plugin>
