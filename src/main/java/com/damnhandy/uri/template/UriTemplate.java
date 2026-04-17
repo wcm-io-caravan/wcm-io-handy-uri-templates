@@ -679,7 +679,9 @@ public class UriTemplate implements Serializable
                 else if (value == null)
                 {
                     expanded = null;
-                } else if (explodable) {
+                }
+                else if (explodable)
+                {
                     // If it's explodable, lookup the appropriate exploder
                     final VarExploder exploder;
                     if (value instanceof VarExploder)
